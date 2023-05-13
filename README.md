@@ -35,12 +35,33 @@ This project was developed with the following technologies:
 ## 📥 Setup
 
 To run this project, follow the instructions below:
-1. Clone this repository: `git clone https://github.com/brunocs90/AspNetCore6WebAPIFundamentals.git`
-2. Navigate to the project directory: `cd AspNetCore6WebAPIFundamentals`
-3. Install dependencies: `dotnet restore`
-4. Update the database connection string in the `appsettings.json` file to match your database server.
-5. Apply database migrations: `dotnet ef database update`
-6. Start the application: `dotnet run`
+
+1. Clone the repository by running the following command in the Git Bash terminal:
+   ```
+   git clone https://github.com/brunocs90/AspNetCore6WebAPIFundamentals.git
+   ```
+2. Open the project in Visual Studio by navigating to `File > Open > Project/Solution` and selecting the project folder (`AspNetCore6WebAPIFundamentals`).
+3. Restore the dependencies by right-clicking on the solution in the Solution Explorer and selecting `Restore NuGet Packages`.
+4. Update the database connection string:
+   - Open the `appsettings.json` file.
+   - Locate the `"DefaultConnection"` property.
+   - Modify the connection string to match your database server configuration.
+5. Apply the database migrations:
+   - Open the Package Manager Console by navigating to `Tools > NuGet Package Manager > Package Manager Console`.
+   - Ensure that the default project selected in the Package Manager Console is the project containing the migrations (`Data` project).
+   - Run the following command in the Package Manager Console:
+     ```
+     Update-Database
+     ```
+   This will apply the database migrations and create the necessary tables in your database.
+6. Set the startup project:
+   - Right-click on the solution in the Solution Explorer and select `Set Startup Projects`.
+   - Select `Multiple startup projects` and set the action to `Start` for both the `AspNetCore6WebAPIFundamentals` and `AspNetCore6WebAPIFundamentals.Tests` projects.
+7. Start the application by clicking on the Start button (or pressing F5) in Visual Studio.
+
+The project will be compiled, and the API will be accessible at the specified URL (e.g., `http://localhost:5000`). You can use tools like Postman or Swagger to test the API endpoints.
+
+**Note**: Make sure you have the necessary runtime and SDK versions installed for ASP.NET Core 6 before running the project in Visual Studio.
 
 ## 📁 Structure
 
